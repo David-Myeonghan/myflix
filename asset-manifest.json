@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.js": "/myflix/static/js/main.c32b0971.chunk.js",
+    "main.js.map": "/myflix/static/js/main.c32b0971.chunk.js.map",
+    "runtime-main.js": "/myflix/static/js/runtime-main.a6470e5e.js",
+    "runtime-main.js.map": "/myflix/static/js/runtime-main.a6470e5e.js.map",
+    "static/js/2.d25ca7c5.chunk.js": "/myflix/static/js/2.d25ca7c5.chunk.js",
+    "static/js/2.d25ca7c5.chunk.js.map": "/myflix/static/js/2.d25ca7c5.chunk.js.map",
+    "index.html": "/myflix/index.html",
+    "precache-manifest.27e90942a1de512d939a7c6305f83b1a.js": "/myflix/precache-manifest.27e90942a1de512d939a7c6305f83b1a.js",
+    "service-worker.js": "/myflix/service-worker.js"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a6470e5e.js",
+    "static/js/2.d25ca7c5.chunk.js",
+    "static/js/main.c32b0971.chunk.js"
+  ]
+}

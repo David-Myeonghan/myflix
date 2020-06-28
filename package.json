@@ -1,6 +1,7 @@
 {
 	"name": "myflix",
 	"version": "0.1.0",
+	"homepage": "https://david-myeonghan.github.io/myflix",
 	"private": true,
 	"dependencies": {
 		"axios": "^0.19.0",
@@ -24,7 +25,6 @@
 	"eslintConfig": {
 		"extends": "react-app"
 	},
-	"homepage": "https://David-Myeonghan.github.io/myflix",
 	"browserslist": {
 		"production": [
 			">0.2%",

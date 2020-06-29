@@ -22,7 +22,7 @@ const HomePresenter = ({ nowPlaying, upcoming, popular, error, loading }) => (
 			<Container>
 				{nowPlaying && nowPlaying.length > 0 && (
 					<Section title="Now Playing">
-						{nowPlaying.map(movie => (
+						{nowPlaying.map((movie) => (
 							<Poster
 								key={movie.id}
 								id={movie.id}
@@ -37,7 +37,7 @@ const HomePresenter = ({ nowPlaying, upcoming, popular, error, loading }) => (
 				)}
 				{upcoming && upcoming.length > 0 && (
 					<Section title="upcoming Movies">
-						{upcoming.map(movie => (
+						{upcoming.map((movie) => (
 							<Poster
 								key={movie.id}
 								id={movie.id}
@@ -47,13 +47,12 @@ const HomePresenter = ({ nowPlaying, upcoming, popular, error, loading }) => (
 								year={movie.release_date && movie.release_date.substring(0, 4)}
 								isMovie={true}
 							/>
-						))}
 						))}
 					</Section>
 				)}
 				{popular && popular.length > 0 && (
 					<Section title="Popular Movies">
-						{popular.map(movie => (
+						{popular.map((movie) => (
 							<Poster
 								key={movie.id}
 								id={movie.id}
@@ -63,7 +62,6 @@ const HomePresenter = ({ nowPlaying, upcoming, popular, error, loading }) => (
 								year={movie.release_date && movie.release_date.substring(0, 4)}
 								isMovie={true}
 							/>
-						))}
 						))}
 					</Section>
 				)}
@@ -78,7 +76,7 @@ HomePresenter.propTypes = {
 	popular: PropTypes.array,
 	upcoming: PropTypes.array,
 	loading: PropTypes.bool.isRequired,
-	error: PropTypes.string
+	error: PropTypes.string,
 };
 
 export default HomePresenter;

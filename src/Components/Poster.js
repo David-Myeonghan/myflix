@@ -8,7 +8,7 @@ const Container = styled.div`
 `;
 
 const Image = styled.div`
-	background-image: url(${props => props.bgUrl});
+	background-image: url(${(props) => props.bgUrl});
 	});
 	height: 180px;
 	background-size: cover;
@@ -53,11 +53,7 @@ const Poster = ({ id, imageUrl, title, rating, year, isMovie = false }) => (
 		<Container>
 			<ImageContainer>
 				<Image
-					bgUrl={
-						imageUrl
-							? `https://image.tmdb.org/t/p/w300${imageUrl}`
-							: require("../assets/no_poster_small.png")
-					}
+					bgUrl={imageUrl ? `https://image.tmdb.org/t/p/w300${imageUrl}` : require("../assets/no_poster_small.png")}
 				/>
 				<Rating>
 					<span role="img" aria-label="rating">
@@ -66,9 +62,7 @@ const Poster = ({ id, imageUrl, title, rating, year, isMovie = false }) => (
 					{rating}/10
 				</Rating>
 			</ImageContainer>
-			<Title>
-				{title.length > 19 ? `${title.substring(0, 19)}...` : title}
-			</Title>
+			<Title>{title.length > 19 ? `${title.substring(0, 19)}...` : title}</Title>
 			<Year>{year}</Year>
 		</Container>
 	</Link>
@@ -80,7 +74,7 @@ Poster.propTypes = {
 	title: PropTypes.string.isRequired,
 	rating: PropTypes.number,
 	year: PropTypes.string,
-	isMovie: PropTypes.bool
+	isMovie: PropTypes.bool,
 };
 
 export default Poster;

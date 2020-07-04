@@ -24,7 +24,7 @@ export default class extends React.Component {
 			const {
 				data: { results: popular },
 			} = await moviesApi.popular();
-			this.setState({ nowPlaying: nowPlaying, upcoming, popular });
+			this.setState({ nowPlaying, upcoming, popular });
 		} catch {
 			this.setState({
 				error: "Can't find movies information.",
@@ -40,7 +40,14 @@ export default class extends React.Component {
 		// this goes to presenter.
 		const { nowPlaying, upcoming, popular, error, loading } = this.state;
 		return (
-			<HomePresenter nowPlaying={nowPlaying} upcoming={upcoming} popular={popular} error={error} loading={loading} />
+			<HomePresenter
+				nowPlaying={nowPlaying}
+				upcoming={upcoming}
+				popular={popular}
+				error={error}
+				loading={loading}
+				prop={this.props}
+			/>
 		);
 	}
 }

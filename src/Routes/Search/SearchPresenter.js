@@ -22,25 +22,13 @@ const Input = styled.input`
 	width: 100%;
 `;
 
-const SearchPresenter = ({
-	movieResults,
-	tvResults,
-	loading,
-	searchTerm,
-	handleSubmit,
-	error,
-	updateTerm
-}) => (
+const SearchPresenter = ({ movieResults, tvResults, loading, searchTerm, handleSubmit, error, updateTerm }) => (
 	<Container>
 		<Helmet>
 			<title>Search | Myflix</title>
 		</Helmet>
 		<Form onSubmit={handleSubmit}>
-			<Input
-				placeholder="Search Moview or TV Shows..."
-				value={searchTerm}
-				onChange={updateTerm}
-			/>
+			<Input placeholder="Search Movies or TV Shows..." value={searchTerm} onChange={updateTerm} />
 		</Form>
 		{loading ? (
 			<Loader />
@@ -48,7 +36,7 @@ const SearchPresenter = ({
 			<>
 				{movieResults && movieResults.length > 0 && (
 					<Section title="Movie Results">
-						{movieResults.map(movie => (
+						{movieResults.map((movie) => (
 							<Poster
 								key={movie.id}
 								id={movie.id}
@@ -64,27 +52,22 @@ const SearchPresenter = ({
 				)}
 				{tvResults && tvResults.length > 0 && (
 					<Section title="TV show Results">
-						{tvResults.map(show => (
+						{tvResults.map((show) => (
 							<Poster
 								key={show.id}
 								id={show.id}
 								imageUrl={show.poster_path}
 								title={show.original_name}
 								rating={show.vote_average}
-								year={
-									show.first_air_date && show.first_air_date.substring(0, 4)
-								}
+								year={show.first_air_date && show.first_air_date.substring(0, 4)}
 							/>
 						))}
 					</Section>
 				)}
 				{error && <Message text={error} color="#e74c3c" />}
-				{tvResults &&
-					movieResults &&
-					tvResults.length === 0 &&
-					movieResults.length === 0 && (
-						<Message text="Nothing Found" color="##95a5a6" />
-					)}
+				{tvResults && movieResults && tvResults.length === 0 && movieResults.length === 0 && (
+					<Message text="Nothing Found" color="##95a5a6" />
+				)}
 			</>
 		)}
 	</Container>
@@ -97,7 +80,7 @@ SearchPresenter.propTypes = {
 	error: PropTypes.string,
 	searchTerm: PropTypes.string,
 	handleSubmit: PropTypes.func.isRequired,
-	updateTerm: PropTypes.func.isRequired
+	updateTerm: PropTypes.func.isRequired,
 };
 
 export default SearchPresenter;

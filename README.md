@@ -2,7 +2,8 @@
 
 Learning React and ES6 by building a Movie Discovery App.
 
-~Container has anonymous class with logic
+- Container has anonymous class with logic.
+- ReactPlayer is responsive.
 
 API from https://www.themoviedb.org/
 

@@ -46,7 +46,13 @@ const Cover = styled.div`
 
 const Data = styled.div`
 	width: 70%;
-	margin-left: 10px;
+	margin-left: 20px;
+	height: 100%;
+`;
+
+const TitleAndBtn = styled.div`
+	display: flex;
+	justify-content: space-between;
 `;
 
 const Title = styled.h3`
@@ -54,8 +60,12 @@ const Title = styled.h3`
 	margin-bottom: 10px;
 `;
 
+const BackButton = styled.div`
+	width: 15%;
+`;
+
 const ItemContainer = styled.div`
-	margin: 20px 0;
+	margin: 20px 5px;
 `;
 
 const Item = styled.span``;
@@ -72,11 +82,22 @@ const Overview = styled.p`
 
 const More = styled.a``;
 
-const Player = styled.div`
-	margin: 30px;
+const Wrapper = styled.div`
+	margin-top: 10px;
+	margin-right: 150px;
+	position: relative;
+	padding-top: 56.25%;
 `;
 
-const DetailPresenter = ({ result, error, loading }) =>
+const playerStyle = {
+	position: "absolute",
+	top: "0",
+	left: "0",
+	width: "100%",
+	height: "100%",
+};
+
+const DetailPresenter = ({ result, error, loading, prop }) =>
 	loading ? (
 		<>
 			<Helmet>
@@ -101,7 +122,13 @@ const DetailPresenter = ({ result, error, loading }) =>
 					}
 				/>
 				<Data>
-					<Title>{result.original_title ? result.original_title : result.original_name}</Title>
+					<TitleAndBtn>
+						<Title>{result.original_title ? result.original_title : result.original_name}</Title>
+						<BackButton>
+							<i onClick={prop} class="far fa-times-circle fa-2x"></i>
+						</BackButton>
+					</TitleAndBtn>
+
 					<ItemContainer>
 						<Item>
 							{result.release_date ? result.release_date.substring(0, 4) : result.first_air_date.substring(0, 4)}
@@ -117,7 +144,6 @@ const DetailPresenter = ({ result, error, loading }) =>
 						</Item>
 					</ItemContainer>
 					<Overview>{result.overview}</Overview>
-
 					{result.homepage ? (
 						<More target="_blank" href={result.homepage} rel="noopener noreferrer">
 							More...
@@ -126,9 +152,14 @@ const DetailPresenter = ({ result, error, loading }) =>
 						<p></p>
 					)}
 					{result.videos.results.length !== 0 && result.videos.results[0].site === "YouTube" ? (
-						<Player>
-							<ReactPlayer url={`https://www.youtube.com/watch?v=${result.videos.results[0].key}`} />
-						</Player>
+						<Wrapper>
+							<ReactPlayer
+								style={playerStyle}
+								width="100%"
+								height="100%"
+								url={`https://www.youtube.com/watch?v=${result.videos.results[0].key}`}
+							/>
+						</Wrapper>
 					) : (
 						<p>No Video</p>
 					)}

@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/myflix/static/js/main.926cd601.chunk.js",
-    "main.js.map": "/myflix/static/js/main.926cd601.chunk.js.map",
+    "main.js": "/myflix/static/js/main.b1826121.chunk.js",
+    "main.js.map": "/myflix/static/js/main.b1826121.chunk.js.map",
     "runtime-main.js": "/myflix/static/js/runtime-main.995016f1.js",
     "runtime-main.js.map": "/myflix/static/js/runtime-main.995016f1.js.map",
     "static/js/2.b9edfa71.chunk.js": "/myflix/static/js/2.b9edfa71.chunk.js",
     "static/js/2.b9edfa71.chunk.js.map": "/myflix/static/js/2.b9edfa71.chunk.js.map",
     "index.html": "/myflix/index.html",
-    "precache-manifest.6f234d619f01af65ed919c3cebbddc2a.js": "/myflix/precache-manifest.6f234d619f01af65ed919c3cebbddc2a.js",
+    "precache-manifest.93b6ff73513809c3b92bb47768154371.js": "/myflix/precache-manifest.93b6ff73513809c3b92bb47768154371.js",
     "service-worker.js": "/myflix/service-worker.js",
     "static/js/2.b9edfa71.chunk.js.LICENSE.txt": "/myflix/static/js/2.b9edfa71.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.995016f1.js",
     "static/js/2.b9edfa71.chunk.js",
-    "static/js/main.926cd601.chunk.js"
+    "static/js/main.b1826121.chunk.js"
   ]
 }
